@@ -41,7 +41,13 @@ platform :ios do
       # silent: true,
       # clean: true,
       scheme: "meetlete",
-      export_method: "ad-hoc"
+      export_method: "ad-hoc",
+      export_options: {
+        provisioningProfiles: { 
+          "com.meetlete.app" => "Meetlete app Development",
+          "com.meetlete.app.OneSignalNotificationServiceExtension" => "Meetlete OneSignal Development"
+        }
+      }
     )
 #     firebase_app_distribution(
 #         app: "1:664452671234:ios:1234316d004bac5bf61234",
