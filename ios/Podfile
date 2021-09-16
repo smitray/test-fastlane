@@ -1,0 +1,53 @@
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+# [react-native-unimodules] - Start
+require_relative '../node_modules/react-native-unimodules/cocoapods.rb'
+# [react-native-unimodules] - End 
+
+platform :ios, '11.0'
+
+target 'meetlete' do
+  # [react-native-unimodules]
+  use_unimodules!
+  
+  config = use_native_modules!
+
+  use_react_native!(
+    :path => config[:reactNativePath],
+    # to enable hermes on iOS, change `false` to `true` and then install pods
+    :hermes_enabled => false
+  )
+
+  # [react-native-callkeep]
+  # pod 'RNCallKeep', :path => '../node_modules/react-native-callkeep'
+
+  # [react-native-permissions]
+  permissions_path = '../node_modules/react-native-permissions/ios'
+  pod 'Permission-Camera', :path => "#{permissions_path}/Camera"
+  pod 'Permission-Microphone', :path => "#{permissions_path}/Microphone"
+  pod 'Permission-Notifications', :path => "#{permissions_path}/Notifications"
+  pod 'Permission-Contacts', :path => "#{permissions_path}/Contacts"
+
+  # [react-native-text-input-mask]
+  pod 'React-RCTText', :path => '../node_modules/react-native/Libraries/Text', :modular_headers => true
+
+  target 'meetleteTests' do
+    inherit! :complete
+    # Pods for testing
+  end
+
+  # Enables Flipper.
+  #
+  # Note that if you have use_frameworks! enabled, Flipper will not work and
+  # you should disable the next line.
+  use_flipper!()
+
+  post_install do |installer|
+    react_native_post_install(installer)
+  end
+end
+
+# [react-native-onesignal]
+target 'OneSignalNotificationServiceExtension' do
+  pod 'OneSignal', '>= 3.0', '< 4.0'
+end

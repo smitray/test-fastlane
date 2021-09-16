@@ -1,0 +1,75 @@
+name: Publish App to App Store and Play Store
+
+on:
+#   # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+jobs:
+  release-ios:
+    name: Build app and release  to testflight app
+    # needs: [increment-app-build]
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+#       - name: Login Github User
+#         run: echo -e "machine github.com\n  login $PERSONAL_ACCESS_TOKEN" >> ~/.netrc
+#         env:
+#           PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+      # - name: Switch XCode Version
+      #   run: sudo xcode-select -s /Applications/Xcode_12.5.app
+      - name: Copy env
+        run: |
+          cp -rf .env.development .env.production
+      - name: Install packages
+        run: |
+          yarn install
+      - name: Bundle and Upload to AppStore
+        run: |
+          cd ios
+          fastlane ios testflight_release_to_app_store
+        env:
+          CERTIFICATE_PASSWORD: ${{ secrets.CERTIFICATE_PASSWORD }}
+          KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
+          APP_ID: ${{ secrets.APP_ID }}
+          KEY_ID: ${{ secrets.KEY_ID }}
+          # ANDROID_KEY: ${{ secrets.ANDROID_KEY }}
+          APPLE_KEY: ${{ secrets.APPLE_KEY }}
+          ISSUER_ID: ${{ secrets.ISSUER_ID }}
+
+#   release-android:
+#     name: Build app and release to alpha track android
+#     # needs: [increment-app-build]
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v1
+#       - uses: actions/setup-node@v1
+#         with:
+#           node-version: '10.x'
+#       - uses: actions/setup-ruby@v1
+#         with:
+#           ruby-version: '2.x'
+#       - name: Install packages
+#         run: |
+#           yarn install
+# #          yarn react-native link
+#       - name: Install Fastlane
+#         run:  gem install fastlane
+#       - name: Bundle and Upload to PlayStore
+#         run: |
+#           cd android
+#           fastlane android alpha_release_to_play_store
+#         env:
+#           CERTIFICATE_PASSWORD: ${{ secrets.CERTIFICATE_PASSWORD }}
+#           KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
+#           APP_ID: ${{ secrets.APP_ID }}
+#           KEY_ID: ${{ secrets.KEY_ID }}
+#           ANDROID_KEY: ${{ secrets.ANDROID_KEY }}
+#           APPLE_KEY: ${{ secrets.APPLE_KEY }}
+#           ISSUER_ID: ${{ secrets.ISSUER_ID }}

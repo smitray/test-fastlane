@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1051192294294",
+    "project_id": "b5n7f9735hdg",
+    "storage_bucket": "b5n7f9735hdg.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1051192294294:android:b84d52da9c3a3e03223bb7",
+        "android_client_info": {
+          "package_name": "com.meetlete.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1051192294294-6epeji6q80scsjjpn7uvutiqlrvmfa64.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQCWp41JZ4_mYxy3TTY6LeV-_OKcb9nNw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1051192294294-6epeji6q80scsjjpn7uvutiqlrvmfa64.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1051192294294-j1c7u80s7msq7gmdcai60au5g5t77fq7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.meetlete.app",
+                "app_store_id": "1569033372"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

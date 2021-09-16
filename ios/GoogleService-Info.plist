@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1051192294294-j1c7u80s7msq7gmdcai60au5g5t77fq7.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1051192294294-j1c7u80s7msq7gmdcai60au5g5t77fq7</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCdwjyZCPDCvouxmrUePqPSIdNo6J81IqQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1051192294294</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.meetlete.app</string>
+	<key>PROJECT_ID</key>
+	<string>b5n7f9735hdg</string>
+	<key>STORAGE_BUCKET</key>
+	<string>b5n7f9735hdg.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1051192294294:ios:882ff9669c694246223bb7</string>
+</dict>
+</plist>
