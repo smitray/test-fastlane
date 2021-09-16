@@ -4,6 +4,7 @@ platform :ios do
   desc "Build for ios"
   lane :build do |options|
     # xcversion(version: "12.4")
+    xcode_select '/Applications/Xcode.app'
     setupCodeSigning(ENV["KEYCHAIN_PASSWORD"], ENV["CERTIFICATE_PASSWORD"], 'Certificates/MeetleteDevAdhocDistribution.mobileprovision', 'Certificates/Certificate.p12')
 
     cocoapods(clean_install: true, use_bundle_exec: false, error_callback: true)
