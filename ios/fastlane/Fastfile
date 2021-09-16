@@ -36,22 +36,22 @@ platform :ios do
     #   configuration: 'Release'
     # )
     # Building the iOS app
-    gym(
-      # workspace: "./meetlete.xcworkspace",
-      # include_bitcode: false,
-      # include_symbols: true,
-      # silent: true,
-      # clean: true,
-      scheme: "meetlete",
-      export_method: "ad-hoc"
-    )
-    firebase_app_distribution(
-        app: "1:664452671234:ios:1234316d004bac5bf61234",
-        testers: “dat.ngophat@hdwebsoft.co duong.pham@hdwebsoft.co”,
-        groups: “devs”,
-        release_notes: "Version Staging",
-        firebase_cli_token: "1//0gZAHFhL7VKkwCgYIARAAGBASNwF-L9IrMXI1VmkrCUBHhBVgxkeASD_Uyrv08d3lhVnxrFz2rI5MgEuPE-doF7O7u9y13vQfLDE",
-    )
+#     gym(
+#       # workspace: "./meetlete.xcworkspace",
+#       # include_bitcode: false,
+#       # include_symbols: true,
+#       # silent: true,
+#       # clean: true,
+#       scheme: "meetlete",
+#       export_method: "ad-hoc"
+#     )
+#     firebase_app_distribution(
+#         app: "1:664452671234:ios:1234316d004bac5bf61234",
+#         testers: “dat.ngophat@hdwebsoft.co duong.pham@hdwebsoft.co”,
+#         groups: “devs”,
+#         release_notes: "Version Staging",
+#         firebase_cli_token: "1//0gZAHFhL7VKkwCgYIARAAGBASNwF-L9IrMXI1VmkrCUBHhBVgxkeASD_Uyrv08d3lhVnxrFz2rI5MgEuPE-doF7O7u9y13vQfLDE",
+#     )
   end
 
   desc "Upload to testflight"
