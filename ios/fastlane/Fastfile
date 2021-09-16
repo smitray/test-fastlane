@@ -44,8 +44,8 @@ platform :ios do
       export_method: "ad-hoc",
       export_options: {
         provisioningProfiles: { 
-          "com.meetlete.app" => "Meetlete app Development",
-          "com.meetlete.app.OneSignalNotificationServiceExtension" => "Meetlete OneSignal Development"
+          "com.meetlete.app" => "Meetlete app AdHoc",
+          "com.meetlete.app.OneSignalNotificationServiceExtension" => "Meetlete OneSignal AdHoc"
         }
       }
     )
