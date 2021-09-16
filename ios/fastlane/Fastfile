@@ -1,10 +1,8 @@
-xcode_select '/Applications/Xcode.app'
 default_platform(:ios)
 
 platform :ios do
   desc "Build for ios"
   lane :build do |options|
-    xcversion(version: "12.4")
     setupCodeSigning(ENV["KEYCHAIN_PASSWORD"], ENV["CERTIFICATE_PASSWORD"], 'Certificates/Meetlete_app_AdHoc.mobileprovision', 'Certificates/Apple Distribution- Meetlete, Inc. (8D8PW9FV6S).p12')
 
     cocoapods(clean_install: true, use_bundle_exec: false, error_callback: true)
