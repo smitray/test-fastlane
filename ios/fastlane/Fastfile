@@ -35,7 +35,7 @@ platform :ios do
     # Building the iOS app
     update_project_provisioning(
       profile: "Certificates/Meetlete_app_AppStore.mobileprovision",
-      target_filter: meetlete
+      target_filter: "meetlete",
       code_signing_identity: "Apple Distribution: Meetlete, Inc. (8D8PW9FV6S)"
     )
     gym(
