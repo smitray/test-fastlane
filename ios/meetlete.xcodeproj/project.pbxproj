@@ -829,7 +829,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.meetlete.app;
 				PRODUCT_NAME = Meetlete;
-				PROVISIONING_PROFILE_SPECIFIER = "Meetlete app AdHoc";
+				PROVISIONING_PROFILE_SPECIFIER = "Meetlete app AppStore";
 				SWIFT_OBJC_BRIDGING_HEADER = "meetlete-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -967,7 +967,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.meetlete.app;
 				PRODUCT_NAME = Meetlete;
-				PROVISIONING_PROFILE_SPECIFIER = "Meetlete app AdHoc";
+				PROVISIONING_PROFILE_SPECIFIER = "Meetlete app AppStore";
 				SWIFT_OBJC_BRIDGING_HEADER = "meetlete-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1100,7 +1100,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 4;
@@ -1120,7 +1120,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.meetlete.app.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Meetlete OneSignal Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Meetlete OneSignal AppStore";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1140,7 +1140,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
@@ -1160,7 +1160,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.meetlete.app.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Meetlete OneSignal Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Meetlete OneSignal AppStore";
 				SKIP_INSTALL = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";

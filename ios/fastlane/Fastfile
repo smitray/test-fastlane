@@ -40,7 +40,13 @@ platform :ios do
       silent: true,
       clean: true,
       scheme: "meetlete",
-      export_method: "app-store"
+      export_method: "app-store",
+      export_options: {
+      provisioningProfiles: { 
+        "com.meetlete.app" => "Meetlete app AppStore",
+        "com.meetlete.app.OneSignalNotificationServiceExtension" => "Meetlete OneSignal AppStore"
+      }
+    }
     )
     upload_to_testflight(
       # skip_submission: true,
