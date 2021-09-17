@@ -97,5 +97,5 @@ def setupCodeSigning(keychainPassword, certificatePassword, profilePath, certifi
   )
   install_provisioning_profile(path: 'Certificates/Meetlete_app_Development.mobileprovision')
   install_provisioning_profile(path: 'Certificates/Meetlete_OneSignal_Development.mobileprovision')
-  install_provisioning_profile(path: 'Certificates/Meetlete_OneSignal_AdHoc.mobileprovision')
+  # install_provisioning_profile(path: 'Certificates/Meetlete_OneSignal_AdHoc.mobileprovision')
 end
