@@ -85,15 +85,21 @@ def setupCodeSigning(keychainPassword, certificatePassword, profilePath, certifi
     timeout: 3600,
     lock_when_sleeps: false
   )
-  install_provisioning_profile(path: profilePath)
+  # install_provisioning_profile(path: profilePath)
   import_certificate(
-    certificate_path: certificatePath,
+    certificate_path: 'Certificates/Apple Development- HDWebSoft Mobile (5CAH25M52Q).p12',
     certificate_password: certificatePassword,
     keychain_name: "CI",
     keychain_password: keychainPassword
   )
+  # import_certificate(
+  #   certificate_path: certificatePath,
+  #   certificate_password: certificatePassword,
+  #   keychain_name: "CI",
+  #   keychain_password: keychainPassword
+  # )
   install_provisioning_profile(path: 'Certificates/Meetlete_app_Development.mobileprovision')
   install_provisioning_profile(path: 'Certificates/Meetlete_OneSignal_Development.mobileprovision')
-  install_provisioning_profile(path: 'Certificates/Meetlete_OneSignal_AdHoc.mobileprovision')
-  install_provisioning_profile(path: 'Certificates/Meetlete_OneSignal_AppStore.mobileprovision')
+  # install_provisioning_profile(path: 'Certificates/Meetlete_OneSignal_AdHoc.mobileprovision')
+  # install_provisioning_profile(path: 'Certificates/Meetlete_OneSignal_AppStore.mobileprovision')
 end
