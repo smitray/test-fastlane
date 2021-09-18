@@ -37,7 +37,7 @@ jobs:
       - name: Bundle and Upload to AppStore
         run: |
           cd ios
-          fastlane ios testflight_release_to_app_store
+          DEVELOPER_DIR="/Applications/Xcode_12.4.app" fastlane ios testflight_release_to_app_store
         env:
           CERTIFICATE_PASSWORD: ${{ secrets.CERTIFICATE_PASSWORD }}
           KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
