@@ -40,7 +40,8 @@ platform :ios do
     # )
     # xcversion(version: "12.4")
     # xcode_select "/Applications/Xcode8.app"
-    xcode_select "/Applications/Xcode_12.4.app"
+    xcode-select "/Applications/Xcode_12.4.app"
+    DEVELOPER_DIR="/Applications/Xcode_12.4.app"
     gym(
       workspace: "./meetlete.xcworkspace",
       # include_bitcode: true,
