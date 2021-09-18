@@ -38,21 +38,21 @@ platform :ios do
     #   target_filter: "meetlete",
     #   code_signing_identity: "Apple Distribution: Meetlete, Inc. (8D8PW9FV6S)"
     # )
-    # gym(
-    #   workspace: "./meetlete.xcworkspace",
-    #   include_bitcode: true,
-    #   include_symbols: true,
-    #   silent: true,
-    #   clean: true,
-    #   scheme: "meetlete",
-    #   export_method: "app-store",
-    #   export_options: {
-    #   provisioningProfiles: { 
-    #     "com.meetlete.app" => "Meetlete app AppStore",
-    #     "com.meetlete.app.OneSignalNotificationServiceExtension" => "Meetlete OneSignal AppStore"
-    #   }
-    # }
-    # )
+    gym(
+      workspace: "./meetlete.xcworkspace",
+      # include_bitcode: true,
+      # include_symbols: true,
+      # silent: true,
+      # clean: true,
+      scheme: "meetlete",
+      export_method: "development",
+      export_options: {
+      provisioningProfiles: { 
+        "com.meetlete.app" => "Meetlete app Development",
+        "com.meetlete.app.OneSignalNotificationServiceExtension" => "Meetlete OneSignal Development"
+      }
+    }
+    )
     # upload_to_testflight(
     #   # skip_submission: true,
     #   apple_id: ENV["APP_ID"],
