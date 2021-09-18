@@ -10,6 +10,7 @@ platform :ios do
       key_id: ENV["KEY_ID"],
       issuer_id: ENV["ISSUER_ID"],
       key_content: ENV["APPLE_KEY"],
+      key_filepath: "Certificates/AuthKey_R7Q9B859TM.p8",
       duration: 1200, # optional (maximum 1200)
       in_house: false, # optional but may be required if using match/sigh
     )
@@ -36,6 +37,11 @@ platform :ios do
     update_project_provisioning(
       profile: "Certificates/Meetlete_app_AppStore.mobileprovision",
       target_filter: "meetlete",
+      code_signing_identity: "Apple Distribution: Meetlete, Inc. (8D8PW9FV6S)"
+    )
+    update_project_provisioning(
+      profile: "Certificates/MeetleteOneSignalAppStore.mobileprovision",
+      target_filter: "OneSignalNotificationServiceExtension",
       code_signing_identity: "Apple Distribution: Meetlete, Inc. (8D8PW9FV6S)"
     )
     gym(
