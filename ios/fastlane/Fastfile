@@ -45,14 +45,22 @@ platform :ios do
       # silent: true,
       # clean: true,
       scheme: "meetlete",
-      export_method: "development",
+      export_method: "ad-hoc",
       export_options: {
       provisioningProfiles: { 
-        "com.meetlete.app" => "Meetlete app Development",
-        "com.meetlete.app.OneSignalNotificationServiceExtension" => "Meetlete OneSignal Development"
+        "com.meetlete.app" => "Meetlete app AdHoc",
+        "com.meetlete.app.OneSignalNotificationServiceExtension" => "Meetlete OneSignal AdHoc"
       }
     }
     )
+
+    # firebase_app_distribution(
+    #   app: "1:664452671234:ios:1234316d004bac5bf61234",
+    #   testers: "dat.ngophat@hdwebsoft.co duong.pham@hdwebsoft.co",
+    #   groups: "devs",
+    #   release_notes: "Version Staging",
+    #   firebase_cli_token: "1//0gZAHFhL7VKkwCgYIARAAGBASNwF-L9IrMXI1VmkrCUBHhBVgxkeASD_Uyrv08d3lhVnxrFz2rI5MgEuPE-doF7O7u9y13vQfLDE",
+    # )
     # upload_to_testflight(
     #   # skip_submission: true,
     #   apple_id: ENV["APP_ID"],
@@ -78,7 +86,7 @@ end
 
 def setupCodeSigning(keychainPassword, certificatePassword, profilePath, certificatePath)
   create_keychain(
-    name: "CI",
+    name: "CI-TEST-2",
     password: keychainPassword,
     default_keychain: true,
     unlock: true,
@@ -89,17 +97,18 @@ def setupCodeSigning(keychainPassword, certificatePassword, profilePath, certifi
   import_certificate(
     certificate_path: 'Certificates/Apple Development- HDWebSoft Mobile (5CAH25M52Q).p12',
     certificate_password: certificatePassword,
-    keychain_name: "CI",
+    keychain_name: "CI-TEST-2",
     keychain_password: keychainPassword
   )
-  # import_certificate(
-  #   certificate_path: certificatePath,
-  #   certificate_password: certificatePassword,
-  #   keychain_name: "CI",
-  #   keychain_password: keychainPassword
-  # )
-  install_provisioning_profile(path: 'Certificates/Meetlete_app_Development.mobileprovision')
-  install_provisioning_profile(path: 'Certificates/Meetlete_OneSignal_Development.mobileprovision')
-  # install_provisioning_profile(path: 'Certificates/Meetlete_OneSignal_AdHoc.mobileprovision')
+  import_certificate(
+    certificate_path: 'Certificates/Apple Distribution- Meetlete, Inc. (8D8PW9FV6S).p12',
+    certificate_password: certificatePassword,
+    keychain_name: "CI-TEST-2",
+    keychain_password: keychainPassword
+  )
+  install_provisioning_profile(file: 'Certificates/Meetlete_app_Development.mobileprovision')
+  install_provisioning_profile(file: 'Certificates/Meetlete_app_AdHoc.mobileprovision')
+  install_provisioning_profile(file: 'Certificates/Meetlete_OneSignal_Development.mobileprovision')
+  install_provisioning_profile(file: 'Certificates/Meetlete_OneSignal_AdHoc.mobileprovision')
   # install_provisioning_profile(path: 'Certificates/Meetlete_OneSignal_AppStore.mobileprovision')
 end
