@@ -1,4 +1,4 @@
-xcversion(version: "12.4")
+xcversion(version: "8.1")
 
 
 default_platform(:ios)
@@ -46,10 +46,10 @@ platform :ios do
     # DEVELOPER_DIR="/Applications/Xcode_12.4.app"
     build_app(
       workspace: "./meetlete.xcworkspace",
-      # include_bitcode: true,
-      # include_symbols: true,
-      # silent: true,
-      # clean: true,
+      include_bitcode: false,
+      include_symbols: true,
+      silent: true,
+      clean: true,
       scheme: "meetlete",
       export_method: "ad-hoc",
       export_options: {
