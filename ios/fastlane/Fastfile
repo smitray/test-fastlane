@@ -38,7 +38,9 @@ platform :ios do
     #   target_filter: "meetlete",
     #   code_signing_identity: "Apple Distribution: Meetlete, Inc. (8D8PW9FV6S)"
     # )
-    xcversion(version: "12.4")
+    # xcversion(version: "12.4")
+    # xcode_select "/Applications/Xcode8.app"
+    xcode_select "/Applications/Xcode_12.4.app"
     gym(
       workspace: "./meetlete.xcworkspace",
       # include_bitcode: true,
