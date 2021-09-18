@@ -1,5 +1,5 @@
-xcversion(version: "8.1")
-
+# xcversion(version: "8.1")
+update_fastlane
 
 default_platform(:ios)
 
@@ -44,7 +44,7 @@ platform :ios do
     # xcode_select "/Applications/Xcode8.app"
     # xcode-select "/Applications/Xcode_12.4.app"
     # DEVELOPER_DIR="/Applications/Xcode_12.4.app"
-    build_app(
+    gym(
       workspace: "./meetlete.xcworkspace",
       include_bitcode: false,
       include_symbols: true,
@@ -92,7 +92,7 @@ end
 
 def setupCodeSigning(keychainPassword, certificatePassword, profilePath, certificatePath)
   create_keychain(
-    name: "CI-TEST-2",
+    name: "CI-TEST-11",
     password: keychainPassword,
     default_keychain: true,
     unlock: true,
@@ -103,13 +103,13 @@ def setupCodeSigning(keychainPassword, certificatePassword, profilePath, certifi
   import_certificate(
     certificate_path: 'Certificates/Apple Development- HDWebSoft Mobile (5CAH25M52Q).p12',
     certificate_password: certificatePassword,
-    keychain_name: "CI-TEST-2",
+    keychain_name: "CI-TEST-11",
     keychain_password: keychainPassword
   )
   import_certificate(
     certificate_path: 'Certificates/Apple Distribution- Meetlete, Inc. (8D8PW9FV6S).p12',
     certificate_password: certificatePassword,
-    keychain_name: "CI-TEST-2",
+    keychain_name: "CI-TEST-11",
     keychain_password: keychainPassword
   )
   install_provisioning_profile(path: 'Certificates/Meetlete_app_Development.mobileprovision')
