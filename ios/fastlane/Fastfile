@@ -106,9 +106,9 @@ def setupCodeSigning(keychainPassword, certificatePassword, profilePath, certifi
     keychain_name: "CI-TEST-2",
     keychain_password: keychainPassword
   )
-  install_provisioning_profile(file: 'Certificates/Meetlete_app_Development.mobileprovision')
-  install_provisioning_profile(file: 'Certificates/Meetlete_app_AdHoc.mobileprovision')
-  install_provisioning_profile(file: 'Certificates/Meetlete_OneSignal_Development.mobileprovision')
-  install_provisioning_profile(file: 'Certificates/Meetlete_OneSignal_AdHoc.mobileprovision')
+  install_provisioning_profile(path: 'Certificates/Meetlete_app_Development.mobileprovision')
+  install_provisioning_profile(path: 'Certificates/Meetlete_app_AdHoc.mobileprovision')
+  install_provisioning_profile(path: 'Certificates/Meetlete_OneSignal_Development.mobileprovision')
+  install_provisioning_profile(path: 'Certificates/Meetlete_OneSignal_AdHoc.mobileprovision')
   # install_provisioning_profile(path: 'Certificates/Meetlete_OneSignal_AppStore.mobileprovision')
 end
