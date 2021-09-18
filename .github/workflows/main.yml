@@ -17,7 +17,7 @@ jobs:
   release-ios:
     name: Build app and release  to testflight app
     # needs: [increment-app-build]
-    runs-on: macos-latest
+    runs-on: macos-11
     steps:
       - uses: actions/checkout@v1
       - name: Use Node.js ${{ matrix.node-version }}
