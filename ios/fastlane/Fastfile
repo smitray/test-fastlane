@@ -1,4 +1,4 @@
-# xcversion(version: "8.1")
+xcversion(version: "12.5.1")
 update_fastlane
 
 default_platform(:ios)
@@ -41,7 +41,7 @@ platform :ios do
     #   target_filter: "meetlete",
     #   code_signing_identity: "Apple Distribution: Meetlete, Inc. (8D8PW9FV6S)"
     # )
-    # xcode_select "/Applications/Xcode8.app"
+    xcode_select "/Applications/Xcode_12.5.1.app"
     # xcode-select "/Applications/Xcode_12.4.app"
     # DEVELOPER_DIR="/Applications/Xcode_12.4.app"
     gym(
