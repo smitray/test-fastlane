@@ -44,7 +44,7 @@ platform :ios do
     # xcode_select "/Applications/Xcode8.app"
     # xcode-select "/Applications/Xcode_12.4.app"
     # DEVELOPER_DIR="/Applications/Xcode_12.4.app"
-    gym(
+    build_app(
       workspace: "./meetlete.xcworkspace",
       # include_bitcode: true,
       # include_symbols: true,
@@ -56,7 +56,7 @@ platform :ios do
       provisioningProfiles: { 
         "com.meetlete.app" => "Meetlete app AdHoc",
         "com.meetlete.app.OneSignalNotificationServiceExtension" => "Meetlete OneSignal AdHoc"
-      }
+      },
     }
     )
 
