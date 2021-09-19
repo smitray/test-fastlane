@@ -61,7 +61,7 @@ platform :ios do
     )
 
     firebase_app_distribution(
-      app: "1:664452671234:ios:1234316d004bac5bf61234",
+      app: "1:1051192294294:ios:882ff9669c694246223bb7",
       testers: "dat.ngophat@hdwebsoft.co duong.pham@hdwebsoft.co",
       groups: "devs",
       release_notes: "Version Staging",
