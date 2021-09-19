@@ -41,7 +41,7 @@ platform :ios do
     #   target_filter: "meetlete",
     #   code_signing_identity: "Apple Distribution: Meetlete, Inc. (8D8PW9FV6S)"
     # )
-    xcode_select "/Applications/Xcode_12.5.1.app"
+    # xcode_select "/Applications/Xcode_12.5.1.app"
     # xcode-select "/Applications/Xcode_12.4.app"
     # DEVELOPER_DIR="/Applications/Xcode_12.4.app"
     gym(
@@ -65,7 +65,7 @@ platform :ios do
       testers: "dat.ngophat@hdwebsoft.co duong.pham@hdwebsoft.co",
       groups: "devs",
       release_notes: "Version Staging",
-      firebase_cli_token: "1//0gZAHFhL7VKkwCgYIARAAGBASNwF-L9IrMXI1VmkrCUBHhBVgxkeASD_Uyrv08d3lhVnxrFz2rI5MgEuPE-doF7O7u9y13vQfLDE",
+      firebase_cli_token: "1//0gR_mutOSg7nXCgYIARAAGBASNwF-L9IrdZGYkL4gH97Nc5sqbxdMQxdUN2ECats2vXQHnB_PDDhnYepGKKMOoT3f0CNfoyod9vY",
     )
     # upload_to_testflight(
     #   # skip_submission: true,
