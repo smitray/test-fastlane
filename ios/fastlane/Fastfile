@@ -64,7 +64,7 @@ platform :ios do
       app: "1:1051192294294:ios:882ff9669c694246223bb7",
       testers: "dat.ngophat@hdwebsoft.co duong.pham@hdwebsoft.co",
       groups: "devs",
-      release_notes: "Version Staging",
+      release_notes: "Version Staging 2",
       firebase_cli_token: "1//0gR_mutOSg7nXCgYIARAAGBASNwF-L9IrdZGYkL4gH97Nc5sqbxdMQxdUN2ECats2vXQHnB_PDDhnYepGKKMOoT3f0CNfoyod9vY",
     )
     # upload_to_testflight(
