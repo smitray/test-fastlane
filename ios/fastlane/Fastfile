@@ -9,17 +9,18 @@ platform :ios do
     setupCodeSigning(ENV["KEYCHAIN_PASSWORD"], ENV["CERTIFICATE_PASSWORD"], 'Certificates/MeetleteDevDistribution.mobileprovision', 'Certificates/Certificate.p12')
 
     # cocoapods(clean_install: true, use_bundle_exec: false, error_callback: true)
-    # api_key = app_store_connect_api_key(
-    #   key_id: ENV["KEY_ID"],
-    #   issuer_id: ENV["ISSUER_ID"],
-    #   key_content: ENV["APPLE_KEY"],
-    #   duration: 1200, # optional (maximum 1200)
-    #   in_house: false, # optional but may be required if using match/sigh
-    # )
+    api_key = app_store_connect_api_key(
+    key_id: ENV["KEY_ID"],
+    issuer_id: ENV["ISSUER_ID"],
+    key_content: ENV["APPLE_KEY"],
+    key_filepath: "Certificates/AuthKey_R7Q9B859TM.p8",
+    duration: 1200, # optional (maximum 1200)
+    in_house: false, # optional but may be required if using match/sigh
+    )
 
-    # increment_build_number(
-    #   xcodeproj: './meetlete.xcodeproj'
-    # )
+    increment_build_number(
+      xcodeproj: './meetlete.xcodeproj'
+    )
     # # new_version = get_version_number
     # # commit_version_bump(
     # #   message: "Deployed new build #{lane_context[SharedValues::BUILD_NUMBER]}",
@@ -36,43 +37,38 @@ platform :ios do
     #  configuration: 'Release'
     # )
     # Building the iOS app
-    # update_project_provisioning(
-    #   profile: "Certificates/Meetlete_app_AppStore.mobileprovision",
-    #   target_filter: "meetlete",
-    #   code_signing_identity: "Apple Distribution: Meetlete, Inc. (8D8PW9FV6S)"
-    # )
-    # xcode_select "/Applications/Xcode_12.5.1.app"
-    # xcode-select "/Applications/Xcode_12.4.app"
-    # DEVELOPER_DIR="/Applications/Xcode_12.4.app"
+    update_project_provisioning(
+      profile: "Certificates/Meetlete_app_AppStore.mobileprovision",
+      target_filter: "meetlete",
+      code_signing_identity: "Apple Distribution: Meetlete, Inc. (8D8PW9FV6S)"
+    )
+    update_project_provisioning(
+      profile: "Certificates/MeetleteOneSignalAppStore.mobileprovision",
+      target_filter: "OneSignalNotificationServiceExtension",
+      code_signing_identity: "Apple Distribution: Meetlete, Inc. (8D8PW9FV6S)"
+    )
     gym(
-      # workspace: "./meetlete.xcworkspace",
-      # include_bitcode: false,
-      # include_symbols: true,
-      # silent: true,
-      # clean: true,
+      workspace: "./meetlete.xcworkspace",
+      include_bitcode: false,
+      include_symbols: true,
+      silent: true,
+      clean: true,
       scheme: "meetlete",
-      export_method: "ad-hoc",
+      export_method: "app-store",
       export_options: {
       provisioningProfiles: { 
-        "com.meetlete.app" => "Meetlete app AdHoc",
-        "com.meetlete.app.OneSignalNotificationServiceExtension" => "Meetlete OneSignal AdHoc"
-      },
+        "com.meetlete.app" => "Meetlete app AppStore",
+        "com.meetlete.app.OneSignalNotificationServiceExtension" => "Meetlete OneSignal AppStore"
+      }
     }
     )
 
-    firebase_app_distribution(
-      app: "1:1051192294294:ios:882ff9669c694246223bb7",
-      testers: "dat.ngophat@hdwebsoft.co duong.pham@hdwebsoft.co",
-      groups: "devs",
-      release_notes: "Version Staging 2",
-      firebase_cli_token: "1//0gR_mutOSg7nXCgYIARAAGBASNwF-L9IrdZGYkL4gH97Nc5sqbxdMQxdUN2ECats2vXQHnB_PDDhnYepGKKMOoT3f0CNfoyod9vY",
+    upload_to_testflight(
+     # skip_submission: true,
+    apple_id: ENV["APP_ID"],
+    api_key: api_key,
+    skip_waiting_for_build_processing: true
     )
-    # upload_to_testflight(
-    #   # skip_submission: true,
-    #   apple_id: ENV["APP_ID"],
-    #   api_key: api_key,
-    #   skip_waiting_for_build_processing: true
-    # )
   end
 
   desc "Upload to testflight"
@@ -116,5 +112,5 @@ def setupCodeSigning(keychainPassword, certificatePassword, profilePath, certifi
   install_provisioning_profile(path: 'Certificates/Meetlete_app_AdHoc.mobileprovision')
   install_provisioning_profile(path: 'Certificates/Meetlete_OneSignal_Development.mobileprovision')
   install_provisioning_profile(path: 'Certificates/Meetlete_OneSignal_AdHoc.mobileprovision')
-  # install_provisioning_profile(path: 'Certificates/Meetlete_OneSignal_AppStore.mobileprovision')
+  install_provisioning_profile(path: 'Certificates/Meetlete_OneSignal_AppStore.mobileprovision')
 end
